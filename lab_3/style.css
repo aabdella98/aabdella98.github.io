@@ -6,8 +6,8 @@ html, body {
 }
 
 html {
-  font-size: 10px;
-  background-color: #00ffff;
+  font-size: 15px;
+  background-color: #12bae4;
 }
 
 body {
@@ -19,7 +19,7 @@ body {
 /* || typography */
 
 h1, h2, h3 {
-  font-family: 'Cinzel Decorative', cursive;
+  font-family: 'Lato', sans-serif;
   color: #2a2a2a;
 }
 
@@ -37,6 +37,7 @@ h1 {
 h2 {
   font-size: 3rem;
   text-align: center;
+  text-transform: uppercase;
 }
 
 h3 {
@@ -118,7 +119,7 @@ article, section {
 }
 
 aside {
-  flex: 1;
+  flex: 3;
   margin-left: 10px;
   padding: 1%;
 }
