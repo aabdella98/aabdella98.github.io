@@ -1,5 +1,6 @@
 html {
-  background-color: rgb(rgb(121, 23, 23))
+  background-color: rgb(121, 23, 23);
+  font-size: 15px;
 }
 
 .name{
@@ -26,4 +27,14 @@ html {
   margin-left: auto;
   margin-right:auto;
   vertical-align:middle;
+}
+.body h2 {
+  color:gray;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 
+  'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.body p{
+  color:rgb(141, 50, 50);
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 
+  'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
