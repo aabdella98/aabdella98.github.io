@@ -1,8 +1,16 @@
-html {
-  background-color: rgb(226, 116, 116);
+html{
+  background-color: rgb(155, 30, 30);
   font-size: 15px;
+  margin: 0;
+  padding:0;
 }
-
+body{
+  margin: 0;
+  padding:0;
+  width:100%;
+  min-width: 1000;
+  margin:auto;
+}
 .name{
   background-color: rgb(214, 129, 129);
   display:flex;
@@ -10,38 +18,83 @@ html {
   margin-left:calc(50%-50vw);
   width: 100vw;
 }
-.header h1{
-  color:rgb(20, 17, 17);
-  font-size: large;
-  font-family:'Lucida Sans', 'Lucida Sans Regular',
-   'Lucida Grande', 'Lucida Sans Unicode', Geneva, 
-   Verdana, sans-serif,Verdana, sans-serif;
-   padding-right: 20px;
+h1{
+
+  color:rgb(255, 255, 255);
+  text-align: left;
+  font-family:'Lucida Sans',cursive;
+  font-size: 1.8cm;
+  flex: 5;
 }
-header img {
-  display: block;
-  margin-left: auto;
-  padding-top: 20px;
+header{
+  background-color: rgb(206, 148, 148);
+  padding:15px;
+  flex-flow: row wrap;
+  display:flex;
+  margin-bottom: 10px;
 }
 
 .wrapper {
-  width:60%;
   margin:auto;
+  display:flex;
+  flex-wrap: wrap;
+  min-width: 960px;
 }
-.wrapper img{
-  height:200 px;
-  width:200 px;
-  margin:auto;
- 
+
+.img{
+  display: block;
+  width: 200px;
+  border: 1px solid, black;
+  padding: 4px;
+  border-radius: 25px;
 }
-.content h2 {
+.container{
+  min-width: 960px;
+  display: flex;
+}
+
+.content {
   color:rgb(197, 197, 197);
-  widows: 960px; 
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 
-  'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  flex:1;
+  display: block;
 }
-.content p{
+p{
   color:rgb(212, 212, 212);
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 
-  'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: 'Lucida Sans',cursive;
+  display: block;
+}
+h2{
+  color: grey;
+  font-family: 'Times New Roman';
+  text-align: center;
+  font-size: 1.2;
+}
+.Experience ol{
+  font-style: normal;
+  font-size: .8cm;
+  font-weight: 400;
+  letter-spacing: 0.02rem;
+  color: aliceblue;
+  font-family: 'Times New Roman';
+}
+div{
+padding: 15px;
+align-items: center;
+display: block;
+}
+.Description,p{
+  color: aliceblue;
+  margin-bottom:2px;
+  letter-spacing: 0.02rem;
+  font-size: .4cm;
+  font-weight: 200;
+  font-family: 'Times New Roman';
+}
+.Activities,ul{
+  font-family: 'Times New Roman';
+  color: aliceblue;
+  margin-bottom: 2px;
+  letter-spacing: 0.02rem;
+  font-size: 0.4cm;
+  font-weight: 200;
 }
