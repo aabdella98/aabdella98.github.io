@@ -1,12 +1,14 @@
-html{
-  background-color: rgb(155, 30, 30);
-  font-size: 15px;
+html,body{
   margin: 0;
   padding:0;
 }
+html{
+  background-color: rgb(155, 30, 30);
+  font-size: 15px;
+}
+
 body{
-  margin: 0;
-  padding:0;
+ 
   width:100%;
   min-width: 1000;
   margin:auto;
@@ -48,6 +50,10 @@ header{
   padding: 4px;
   border-radius: 25px;
 }
+
+#me{
+  margin-left: 0px;
+}
 .container{
   min-width: 960px;
   display: flex;
@@ -55,13 +61,20 @@ header{
 
 .content {
   color:rgb(197, 197, 197);
-  flex:1;
+  flex:auto;
   display: block;
+  margin-left: 500px;
+  font-size: 2.1em;
+  background-color:rgb(206, 148, 148);
 }
 p{
   color:rgb(212, 212, 212);
   font-family: 'Lucida Sans',cursive;
   display: block;
+}
+#caption{
+  background-color:rgb(206, 148, 148);
+  font-size: 2.1em;
 }
 h2{
   color: grey;
@@ -72,7 +85,7 @@ h2{
 .Experience ol{
   font-style: normal;
   font-size: .8cm;
-  font-weight: 400;
+  font-weight: 800;
   letter-spacing: 0.02rem;
   color: aliceblue;
   font-family: 'Times New Roman';
@@ -95,6 +108,7 @@ display: block;
   color: aliceblue;
   margin-bottom: 2px;
   letter-spacing: 0.02rem;
-  font-size: 0.4cm;
+  font-size: 1em;
   font-weight: 200;
+  flex: auto;
 }
