@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Prof A's Demo Page</title>
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="wrapper">
+        <div class="header">Afnan's Lab 4</div>
+        <button class="activate" onclick="clickMe()">
+          Click me to make a change
+        </button>
+        <div class="content">
+        <div class="p1">
+          <p>
+            My name has 5 characters.
+          </p>
+          </div>
+          <dic class="p2">
+            
+        </div>
+        </div>
+        <div class="footer"></div>
+      </div>
+    </div>
+    <script>
+      function clickMe() {
+        const content = document.querySelector(".content");
+        content.innerHTML = "Hello world";     
+      }
+    </script>
+  </body>
+</html>
