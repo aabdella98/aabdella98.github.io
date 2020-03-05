@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Prof A's Demo Page</title>
+    <title>Afnan Abdella's Page</title>
     <link rel="stylesheet" type="text/css" href="./style.css" />
   </head>
 
   <body>
     <div class="container">
       <div class="wrapper">
-        <div class="header">Afnan's Lab 4</div>
+        <div class="header">Afnan Abdella's Lab 4</div>
         <button class="activate" onclick="clickMe()">
           Click me to make a change
         </button>
@@ -18,9 +18,9 @@
             My name has 5 characters.
           </p>
           </div>
-          <dic class="p2">
-            
-        </div>
+          <div class="p2">      
+     
+          </div>
         </div>
         <div class="footer"></div>
       </div>
@@ -28,8 +28,18 @@
     <script>
       function clickMe() {
         const content = document.querySelector(".content");
-        content.innerHTML = "Hello world";     
+        content.innerHTML = "Hello world";
       }
+      content.textContent ="Afnan Abdella's Lab"
+      var name="Afnan Abdella";
+      var third=name.charAt(2);
+      var upper=third.UpperCase();
+      var total=name.length;
+
+      p2.textContent="The third character in my name is "+ upper;
+      const p2= document.getElementsByClassName("content").appendChild(p2);
+      header.textContent += total;
+    
     </script>
   </body>
 </html>
