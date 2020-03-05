@@ -1,45 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Afnan Abdella's Page</title>
+    <title>Afnan Abdella's Lab 4</title>
     <link rel="stylesheet" type="text/css" href="./style.css" />
   </head>
 
   <body>
     <div class="container">
       <div class="wrapper">
-        <div class="header">Afnan Abdella's Lab 4</div>
+        <div class="top">Prof's A Lab 4</div>
         <button class="activate" onclick="clickMe()">
           Click me to make a change
         </button>
         <div class="content">
-        <div class="p1">
-          <p>
-            My name has 5 characters.
+        <div class="button"></div>
+          <p class="para1">
+            Retro fam narwhal hoodie meggings viral bushwick yr chartreuse.
+            Chartreuse seitan banh mi selfies, woke ennui venmo craft beer. Air
+            plant tumeric retro DIY iPhone poutine. +1 gastropub chillwave,
+            cronut glossier pork belly tacos poke next level fanny pack vegan
+            jianbing lo-fi.
           </p>
-          </div>
-          <div class="p2">      
-     
-          </div>
+          <p class="para2">
+            <div class = "threeletters"></div>
+          </p>
         </div>
         <div class="footer"></div>
       </div>
     </div>
     <script>
-      function clickMe() {
-        const content = document.querySelector(".content");
-        content.innerHTML = "Hello world";
-      }
-      content.textContent ="Afnan Abdella's Lab"
-      var name="Afnan Abdella";
-      var third=name.charAt(2);
-      var upper=third.UpperCase();
-      var total=name.length;
+        var name = "Afnan Abdella";
+        var fname = name.substring(0,6);//first name
+        var lname = name.substring(7,13);//last name
+        var total = fname.length + lname.length;//total length of name
+        var third = name.charAt(2);//third character in name index from 0
+        var upper = third.toUpperCase();//third letter in name uppercase
+        var finalChar = name.substring(10,13);//last three letters in name
+       
 
-      p2.textContent="The third character in my name is "+ upper;
-      const p2= document.getElementsByClassName("content").appendChild(p2);
-      header.textContent += total;
-    
+        function clickMe() {
+        const content2 = document.querySelector(".button"); //creates button
+        content2.innerHTML = "Hello world"; 
+
+      const content1 = document.querySelector(".top");
+      content1.textContent = "Afnan Abdella's Lab 4 " + total; //displays total number of letters in name besides header
+
+      const para1 = document.querySelector(".para1");
+      para1.textContent = "My name has " + total + " characters";//display length of name
+
+      const para2 = document.querySelector(".para2");
+      para2.textContent = "The third character in my name is " + upper; //third character in FIRST name
+
+      const threeletters = document.querySelector(".threeletters");
+      threeletters.textContent = finalChar; //last three letters in LAST name
+      }
+
     </script>
   </body>
 </html>
