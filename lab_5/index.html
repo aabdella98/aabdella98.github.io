@@ -10,7 +10,7 @@
   <div class="container">
     <div class="wrapper">
       <div class="header">Afnan Abdella's List Of Countries</div>
-        <button class="activate" onclick="clickMe()">Click Me</button>
+        <button class="activate" onclick="clickMe()">Click Me to Replace List Entries</button>
       <div class="content">
       </div>
       <div class="footer"></div>
@@ -19,9 +19,11 @@
   <script>
     function clickMe() {
         const button = document.querySelector(".button"); //creates button
+        content2.innerHTML = "Hello World!"; 
     } 
     /* N.B. - For your lab, use the variable "countries" now available on the window space */
-    <div class = "countries">
+  <div class= "countries" >
+    /* N.B. - For your lab, use the variable "countries" now available on the window space */
     const countries = [
       { "name": "Afghanistan", "code": "AF" },
       { "name": "Åland Islands", "code": "AX" },
@@ -269,7 +271,8 @@
     ]
     </div>
     console.log("List of countries in the world", countries);
-  
+
   </script>
-  </body>
+</body>
+
 </html>
