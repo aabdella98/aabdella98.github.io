@@ -12,7 +12,11 @@ h2,
 h3 {
   line-height: 1.2
 }
-
+.button {
+  background-color: #ffd000;
+  font-family: normal;
+  color: rgb(255, 255, 255);
+}
 /* End document default styles */
 .code {
   background-color: rgb(255, 231, 202);
