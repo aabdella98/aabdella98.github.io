@@ -13,7 +13,9 @@
       <!-- <button class="button" onclick="loadData()">Load Some JSON</button> -->
       <button class="button" onclick="console.log(name_output())">Click me to replace list entries</button>
       <div class="content">
-
+        <ul class="instructions" id='all_list'>
+           <span class="code"></span> 
+        </ul>
       </div>
       <div class="footer"></div>
     </div>
@@ -268,15 +270,19 @@
     console.log("List of countries in the world", countries);
     var li_items = document.getElementById('all_list');
     const nations = sessionStorage.setItem("names", JSON.stringify(countries));
+    const code = sessionStorage.setItem("code", JSON.stringify(countries));
     function name_output(){
-      var nations = JSON.parse(sessionStorage.getItem("names"));
+      var nations = JSON.parse(sessionStorage.getItem("names","code"));
+      //var code = JSON.parse(sessionStorage.getItem("code"));
       li_items.innerHTML = '';
       var ol_items = document.createElement('ol');
       li_items.appendChild(ol_items);
       for (i = 0; i < 50; i += 1) {
         var x = Math.floor(Math.random() * nations.length);
         var li_ = document.createElement('li');
-        var li_txt = document.createTextNode(nations[x].name);
+        var li_txt = document.createTextNode(nations[x].name,code);
+        //var li = document.createTextNode(nations[x].code);
+      
         li_.appendChild(li_txt);
         ol_items.appendChild(li_);
         nations.splice(x, 1);
