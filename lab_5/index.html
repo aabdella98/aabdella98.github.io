@@ -3,7 +3,7 @@
 
 <head>
   <title>Lab 5</title>
-  <link rel="stylesheet" type="text/css" href="./lab_styles.css">
+  <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 
 <body>
@@ -270,9 +270,9 @@
     console.log("List of countries in the world", countries);
     var li_items = document.getElementById('all_list');
     const nations = sessionStorage.setItem("names", JSON.stringify(countries));
-    const code = sessionStorage.setItem("code", JSON.stringify(countries));
+    //const code = sessionStorage.setItem("code", JSON.stringify(countries));
     function name_output(){
-      var nations = JSON.parse(sessionStorage.getItem("names","code"));
+      var nations = JSON.parse(sessionStorage.getItem("names"));
       //var code = JSON.parse(sessionStorage.getItem("code"));
       li_items.innerHTML = '';
       var ol_items = document.createElement('ol');
@@ -280,8 +280,8 @@
       for (i = 0; i < 50; i += 1) {
         var x = Math.floor(Math.random() * nations.length);
         var li_ = document.createElement('li');
-        var li_txt = document.createTextNode(nations[x].name,code);
-        //var li = document.createTextNode(nations[x].code);
+        var li_txt = document.createTextNode(nations[x].name);
+       
       
         li_.appendChild(li_txt);
         ol_items.appendChild(li_);
