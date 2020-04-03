@@ -1,10 +1,12 @@
 h1 {
   font-family: helvetica, arial, sans-serif;
   text-align: center;
+  flex-wrap: wrap;
 }
 h2 {
   font-family: helvetica, arial, sans-serif;
   text-align: center;
+  flex-wrap: wrap;
 }
 
 body {
@@ -14,16 +16,13 @@ body {
 
 .full-img {
   position: relative;
-  display: block;
   width: 640px;
   height: 480px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.pic1,.pic2,.pic3,.pic4,.pic5 {
-  position: relative;
-  display: block;
-  width: 640px;
-  height: 480px;
-}
+
 .overlay {
   position: absolute;
   top: 0;
@@ -45,8 +44,10 @@ button {
 }
 
 .thumb-bar img {
-  display: block;
+  display: flex;
   width: 20%;
-  float: left;
+  float: inline-start;
   cursor: pointer;
+  margin-left: auto;
+  margin-right: auto;
 }
