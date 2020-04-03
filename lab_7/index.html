@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Lab 7: Maps Lab</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+      integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+      integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+      crossorigin=""
+    ></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="wrapper">
+        <div class="header">Leaflet (Geo Maps)</div>
+        <div class="content">
+            <div id="mapid" style="width: 640px; height: 480px;"></div>
+            <div class="footer">Afnan Abdella </div>
+        </div>
+    </div>
+
+    <script>
+    var mymap = L.map('mapid').setView([54.5260, 105.2551], 9);
+    const food = [(38.980806, -76.938977), (39.023198, -76.925434), 
+    (39.014292, -76.928369)]
+
+L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+    maxZoom: 20,
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+        '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+        'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    id: 'mapbox/streets-v11',
+    tileSize: 512,
+    zoomOffset: -1
+}).addTo(mymap);
+    L.marker([38.980806, -76.938977]).addTo(mymap)
+        .bindPopup("<b>Starbucks Coffeee</b>").openPopup();
+    L.marker([39.023198, -76.925434]).addTo(mymap)
+        .bindPopup("<b>Tropical Smoothie</b>").openPopup();
+    L.marker([39.014292, -76.928369]).addTo(mymap)
+        .bindPopup("<b>IHOP</b>").openPopup();
+    L.marker([38.993830, -76.945164]).addTo(mymap)
+        .bindPopup("<b>Eppley Recreation Center</b>").openPopup();
+
+
+var popup = L.popup();
+
+function onMapClick(e) {
+    popup
+        .setLatLng(e.latlng)
+        .setContent("You clicked the map at " + e.latlng.toString())
+        .openOn(mymap);
+}
+
+mymap.on('click', onMapClick);
+
+window.screen.availHeight;
+window.screen.availWidth;
+
+    </script>
+  </body>
+</html>
