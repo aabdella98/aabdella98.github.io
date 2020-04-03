@@ -21,7 +21,10 @@ form li + li {
   h1,h2,h3 {
     line-height: 1.5
   }
-  
+  .name {
+    text-overflow: ellipsis;
+    max-width: 200px;
+  }
   .container {
     display: flex;
     flex-direction: column;
