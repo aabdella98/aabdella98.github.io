@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Charts Lab</title>
+    <link rel="stylesheet" type="text/css" href="./styles.css" />
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="wrapper">
+        <div class="header">Frontend Libraries: Charts Lab</div>
+        <div class="content">
+          When your lab is done, this should be replaced with a useful chart full of food data.
+        </div>
+        <div class="footer">Let's eat out in the future!</div>
+      </div>
+    </div>
+    <script>
+      fetch("https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json") 
+        .then((response) => {
+        console.log("response information", response);
+          return response;
+        })
+        .then((data) => data.json()) 
+        .then((data) => {
+          
+          console.log(data);
+          let Data = data.filter((a) => a.geocoded_column_1);
+          let categories = Data.map((b) => ({cat: b.category,}));
+          console.log(categories);
+          return categories;
+        })
+
+        .then((data) => {
+          return data.reduce((cat, category) => {
+            if (!cat[category.cat]) {
+              cat[category.cat] = 1;
+            } else {
+              cat[category.cat]++;
+            }
+            return cat;
+          }, {});
+        })
+        .then((data) => {
+          let chartData = Object.entries(data).map((x, i) => {
+            return {
+              label: x[0],
+              y: x[1],
+            };
+          });
+            return chartData;
+        })
+        .then((chartData) => {
+         
+          let content = document.getElementsByClassName("content")[0];
+          content.innerHTML = "";
+       //chart   
+            var chart = new CanvasJS.Chart(content, {
+            theme: "light1",
+            width: 1150,
+            height: 480,
+            animationEnabled: true,  
+            title: {
+                 text: "PG County Food Breakdown by Category",
+            },
+            data: [{
+                type: "line",
+                dataPoints: chartData,
+                lineColor: "purple",
+                lineThickness: 5,
+                markerType: "square",
+                markerColor: "yellow"
+              },
+            ],
+          });
+          chart.render();
+        });
+    </script>
+  </body>
+</html>
