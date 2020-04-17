@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Afnans Lab 9</title>
+  <link rel="stylesheet" type="text/css" href="./styles.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="wrapper">
+      <div class="header">Afnans Lab 9</div>
+      <div class="content"></div>
+      <div class="footer"></div>
+    </div>
+  </div>
+  <script>
+    fetch('/api') // Rather than fetching from PG County, we're going to fetch from our own server.
+      .then(res => res.json())
+      .then(res => {
+        return res
+       
+        // Here's where your chart code should go.
+        var chart = new CanvasJS.Chart(content, {
+            theme: "light1",
+            width: 1150,
+            height: 480,
+            animationEnabled: true,  
+            title: {
+                 text: "FOOD TIME!",
+            },
+            data: [{
+                type: "line",
+                dataPoints: chartData,
+                lineColor: "purple",
+                lineThickness: 5,
+                markerType: "square",
+                markerColor: "yellow"
+              },
+            ],
+          });
+          chart.render();
+      })
+  </script>
+</body>
+
+</html>
+
