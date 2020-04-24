@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Methods - Post and Put Lab</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="container">
+        <div>
+          <h1 class="header">POST and PUT lab - with Fetch</h1>
+        </div>
+        <div>
+          <form class="targetForm" id="labForm">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" />
+            <label for="zip">Zip Code</label>
+            <input type="text" id="zip" name="zip" />
+            <label for="interests">Interests</label>
+            <textarea id="interests" name="interests" rows="5" cols="33">
+                Default text says what?
+            </textarea
+            ><br />
+            <button id="formBtn">Submit</button>
+            <button id="getBtn">Display Records</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script>
+      function sendForm(e) {
+        e.preventDefault(); 
+        const target = document.querySelector("#labForm");
+        const btn = document.querySelector("#formBtn");
+
+        const formToSend = new FormData(target);
+
+        fetch("/api", {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(Object.fromEntries(formToSend)),
+        })
+          .then((data) => data.json())
+          .then((data) => {
+            console.log(data);
+            btn.setAttribute("disabled", true);
+            const br = document.createElement("br");
+            target.append(br);
+            target.append(data.body);
+          });
+      }
+      const target = document.querySelector("#labForm");
+      const ol = document.createElement("ol");
+
+      function prettyData(rawRow) {
+        console.log(rawRow);
+        const li = document.createElement("li");
+        li.innerHTML = ("<b>Name:</b> "+rawRow.name+ "<br><b>Zip:</b> " + rawRow.zip+ "<br><b>Interests:</b> " + rawRow.interests);
+        ol.append(li)
+      }
+
+      function getRecords(e) {
+        e.preventDefault();        
+
+        fetch("/api", {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          }
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            data.data.forEach(prettyData);
+            target.append(ol);
+          });
+      }
+
+      const formBtn = document.querySelector("#formBtn");
+      formBtn.addEventListener("click", sendForm);
+    
+    </script>
+  </body>
+</html>
